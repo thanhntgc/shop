@@ -53,7 +53,7 @@
                                             <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                            <a href="{{ asset('cart/'.$product->id)}}" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                                         </li>
                                     </ul>
                                 </div>

@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index');
+Route::get('/', 'FrontEnd\HomeController@index');
 
-
+Route::get('cart/{id}', 'FrontEnd\CartController@addToCart')->name('add.cart');
+Route::get('cart', 'FrontEnd\CartController@showCart')->name('cart');
 Auth::routes();
 
 Route::prefix('admin')->group(
@@ -24,8 +25,10 @@ Route::prefix('admin')->group(
         Route::get('/brands', 'BrandController@adminIndex')->name('admin.brands');
         Route::get('/brands/create', 'BrandController@create')->name('create.brand');
         Route::post('/brands/create', 'BrandController@addBrand')->name('create.brand.submit');
+
+
     });
 
 Auth::routes();
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'FrontEnd\HomeController@index');

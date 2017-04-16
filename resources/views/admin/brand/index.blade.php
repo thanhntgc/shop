@@ -1,14 +1,10 @@
-<html>
-    <head>
-        <title>Brand</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script type="application/javascript" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
+@extends('layouts.admin-app')
+
+@section('content')
     <div class="container">
         <h1>Brand</h1>
         <a href="{{route('create.brand')}}" class="btn btn-primary">Create New Brand</a>
-        <table class="table">
+        <table id="datatablebrand" class="table" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -29,5 +25,4 @@
             </tbody>
         </table>
     </div>
-    </body>
-</html>
+@endsection

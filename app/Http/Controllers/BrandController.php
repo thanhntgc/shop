@@ -8,6 +8,12 @@ use App\Http\Requests\BrandFormRequest;
 
 class BrandController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     public function adminIndex() {
     	$brands = Brand::all();
     	return view("admin.brand.index")->with("brands", $brands);
