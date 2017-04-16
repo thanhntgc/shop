@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Catalog;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -66,6 +67,12 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'roles'  => 'user',
         ]);
+    }
+
+    public function showRegistrationForm() {
+        $catalogs = Catalog::all();
+        return view('auth.register')->with("catalogs", $catalogs);
     }
 }
